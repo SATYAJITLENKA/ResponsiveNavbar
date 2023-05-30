@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+}
+
+html{
+    overflow: hidden;
+}
+body{
+    overflow-x: hidden;
+}
+
+.header{
+background-color: rgb(198, 229, 229);
+height: 100px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 40px;
+}
+
+.header .logo{
+    height: 70px;
+    border-radius: 50%;
+    
+}
+
+.navbar-list{
+    list-style: none;
+    display: flex;
+    gap: 40px;
+ }
+
+.navbar-link{
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar-link:link,.navbar-link:visited{
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+.navbar-link:active,
+.navbar-link:hover{
+    color: rgb(156, 12, 12);
+}
+
+.section-hero,
+.section-services{
+    background-color: green;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    font-size: 50px;
+
+}
+
+.section-services{
+    background-color: bisque;
+}
+
+.mobile-navbar-btn{
+    display: none;
+    background:transparent;
+    cursor: pointer;
+}
+.mobile-nav-icon[name="close-outline"]{
+    display: none;
+}
+
+.mobile-nav-icon{
+    height: 40px;
+    width: 40px;
+}
+
+@media (max-width:980px){
+    
+   
+    .mobile-navbar-btn{
+        display: block;
+        z-index: 999;
+        border: 1px solid black;
+        
+    }
+    .header{
+        position: relative;
+    }
+    
+    .navbar{
+        /* display: none; */
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    .navbar-list{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .active .navbar{
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"]{
+        display: block;
+    }
+    .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"]{
+        display: none                                                                                                                                                                                                     ;
+    }
+
+}
+
+
