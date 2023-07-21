@@ -48,7 +48,7 @@ padding: 0 40px;
 
 .section-hero,
 .section-services{
-    background-color: green;
+    background-color: rgb(105, 134, 105);
     height: 600px;
     display: flex;
     align-items: center;
